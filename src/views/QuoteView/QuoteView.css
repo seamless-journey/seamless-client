@@ -1,0 +1,20 @@
+.views__QuoteView__layout { 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.views__QuoteView__quote { 
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.views__QuoteView__generate { 
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+}
