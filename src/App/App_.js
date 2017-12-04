@@ -1,21 +1,30 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import AppBar from 'material-ui/AppBar';
+import Typography from 'material-ui/Typography';
+import Toolbar from 'material-ui/Toolbar';
+
+import ConnectButton from '../components/ConnectButton';
+import AuthReader from '../components/AuthReader';
+import QuoteGenerator from '../components/QuoteGenerator';
+
 import './App.css';
 
-import ConnectView from '../views/ConnectView';
-import AuthView from '../views/AuthView';
-import QuoteView from '../views/QuoteView';
-
-class App extends Component {
+class App extends PureComponent {
   render() {
     const { isConnected, isAuthenticated } = this.props;
-    if ( !isConnected ) { 
-      return  <ConnectView />
-    }
-    if ( !isAuthenticated ) {
-      return  <AuthView />
-    }
-    return <QuoteView />;
+    return (<div className="app__main">
+      <AppBar position="static">
+        <Toolbar className="app__toolbar">
+          <Typography type="title" color="inherit" className="app__title">
+            Seamless
+          </Typography>
+          <ConnectButton className="app__connect"/>
+        </Toolbar>
+      </AppBar>
+      { isConnected && !isAuthenticated && <AuthReader className="app__container" /> }
+      { isConnected && isAuthenticated && <QuoteGenerator className="app__container" /> }
+    </div>);
   }
 }
 

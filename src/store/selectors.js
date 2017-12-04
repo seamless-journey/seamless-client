@@ -1,14 +1,21 @@
 
 
+function getLocal(state) { 
+  return state.local || {};
+}
+
+function getRemote(state) { 
+  return state.remote || {};
+}
+
 export function isConnected(state) { 
   return state.status === 'CONNECTED';
 }
 
 export function isAuthenticated(state) { 
-  return state.local.auth;
+  return getLocal(state).auth;
 }
 
 export function getQuote(state) { 
-  console.log('getQuote', JSON.stringify(state));
-  return state.remote.quote;
+  return getRemote(state).quote;
 }

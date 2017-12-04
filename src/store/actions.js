@@ -9,6 +9,12 @@ export function generate() {
   };
 }
 
+export function notAuth() {
+  return { 
+    type: TYPES.GENERATE,
+  };
+}
+
 export function auth(key) {
   apikey = key;
   return { 
