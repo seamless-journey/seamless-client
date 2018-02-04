@@ -7,6 +7,7 @@ import Toolbar from 'material-ui/Toolbar';
 import ConnectButton from '../components/ConnectButton';
 import AuthReader from '../components/AuthReader';
 import QuoteGenerator from '../components/QuoteGenerator';
+import SceneViewer from '../components/SceneViewer';
 
 import './App.css';
 
@@ -14,7 +15,7 @@ class App extends PureComponent {
   render() {
     const { isConnected, isAuthenticated } = this.props;
     return (<div className="app__main">
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar className="app__toolbar">
           <Typography type="title" color="inherit" className="app__title">
             Seamless
@@ -24,6 +25,7 @@ class App extends PureComponent {
       </AppBar>
       { isConnected && !isAuthenticated && <AuthReader className="app__container" /> }
       { isConnected && isAuthenticated && <QuoteGenerator className="app__container" /> }
+      { isConnected && isAuthenticated && <SceneViewer className="app__container" /> }
     </div>);
   }
 }
