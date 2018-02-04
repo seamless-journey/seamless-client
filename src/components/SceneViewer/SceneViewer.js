@@ -15,17 +15,17 @@ class SceneViewer extends PureComponent {
       <AFrameRenderer 
         inherent={true}>
         <Marker parameters={{ preset: "hiro" }}>
-          <a-gltf-model 
+          {/* <a-gltf-model 
             scale="0.5 0.5 0.5"
             rotation="-90 0 0"
             position="0 0 1"
-            src="./ancient/scene.gltf"></a-gltf-model>
+            src="./ancient/scene.gltf"></a-gltf-model> */}
 
-          {/* <Entity
+          <Entity
               geometry={{ primitive: "box" }}
               material={{ color: "red", opacity: 0.5 }}
               position={{ x: 0, y: 0.5, z: 0 }}
-            /> */}
+            />
         </Marker>
       </AFrameRenderer>        
     );
